@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    var targetNumber = Math.floor(Math.random()*101+19); //random number 19-120
-    var loses = 0;
+    var targetNumber;
+    var losses = 0;
     var wins = 0;
     var counter = 0;
     var yourNumber = 0;
@@ -8,52 +8,53 @@ $(document).ready(function(){
         'assets/images/crystal1.jpg',
         'assets/images/crystal2.jpg',
         'assets/images/crystal3.jpg',
-        'assets/images/crystal4.jpg'
-    ]
-
-    $("#targetNumber").html(targetNumber);
-
-    
-
-    for (var i =0; i < 4; i++) {
-        var randomNumber = Math.floor(Math.random()*11+1); //random number 1-12
+        'assets/images/crystal4.jpg' ]
         
-        var crystal = $("<div>");
-        crystal.attr({
-            "class": 'crystal',
-            "data-randomNumber": randomNumber
-        });
-        crystal.css({
-            "background-image":"url('" + image[i] + "')",
-            "background-size":"cover"
-         });
-
-        $(".crystals").append(crystal); // creating 4 divs in crystal div
-    }
-
-    function gameReset() {
-        var targetNumber = Math.floor(Math.random()*101+19); //random number 19-120
-        var counter = 0;
-        var yourNumber = 0;
+        targetNumber = Math.floor(Math.random()*101+19); //random number 19-120
         $("#targetNumber").html(targetNumber);
-        
-            for (var i =0; i < 4; i++) {
+
+        for (var i =0; i < 4; i++) {
             var randomNumber = Math.floor(Math.random()*11+1); //random number 1-12
-        
+            
             var crystal = $("<div>");
             crystal.attr({
                 "class": 'crystal',
                 "data-randomNumber": randomNumber
-             });
-             crystal.css({
+            });
+            crystal.css({
                 "background-image":"url('" + image[i] + "')",
                 "background-size":"cover"
-             });
+            });
 
         $(".crystals").append(crystal); // creating 4 divs in crystal div
-         }
+        }
+    function gameReset() {
+        $(".crystals").empty();
+        counter = 0;
+        $("#yourNumber").html(counter);
+        yourNumber = 0;
+        targetNumber = Math.floor(Math.random()*101+19); //random number 19-120
+        $("#targetNumber").html(targetNumber);
+
+        for (var i =0; i < 4; i++) {
+            var randomNumber = Math.floor(Math.random()*11+1); //random number 1-12
+            
+            var crystal = $("<div>");
+            crystal.attr({
+                "class": 'crystal',
+                "data-randomNumber": randomNumber
+            });
+            crystal.css({
+                "background-image":"url('" + image[i] + "')",
+                "background-size":"cover"
+            });
+
+        $(".crystals").append(crystal);
+        }
     }
-    $(".crystal").on("click", function() {
+    gameReset();
+    $(document).on("click", ".crystal", function() {
+        
         var value = parseInt($(this).attr('data-randomNumber'));
         //$(this).attr('data-randomNumber') : string
         //parseInt -> to change strings to numbers(value)
@@ -63,10 +64,11 @@ $(document).ready(function(){
         // console.log(counter)
         $("#yourNumber").html(counter);
         if (counter > targetNumber) {
-            loses ++;
-            $("#loses").html(loses);
+            losses ++;
+            $("#losses").html(losses);
             $("#message").html("YOU LOST :(");
             gameReset();
+
         } else if (counter === targetNumber) {
             wins ++;
             $("#wins").html(wins);
