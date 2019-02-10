@@ -1,10 +1,52 @@
+body {
+    background-image: url(../images/tiny-squares.png);
+}
 .crystal {
     height: 100px;
     width: 100px;
-    border: 1px solid gray;
     margin: 10px;
 }
 
 .crystals {
     display: flex;
+    margin: 0 auto;
+}
+
+#title {
+    text-align: center;
+    height: 120px;
+    width: 100%;
+    background-color: olive;
+    color: #ffffff;
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+#howto {
+    background-color: beige;
+    padding: 25px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+}
+
+.score {
+    background-color: olivedrab;
+    padding: 5px;
+    font-family: 'Righteous', cursive;
+}
+#targetNumber {
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 10px;
+    font-size: 55px;
+    font-family: 'Righteous', cursive;
+}
+.sum {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Righteous', cursive;
+    background-color: lightsalmon;
 }

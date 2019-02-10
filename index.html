@@ -6,17 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Righteous|Staatliches" rel="stylesheet">
     <title>CrystalsCollector Game</title>
 
 </head>
 <body>
     <header>
+        <div id="title">
             CRYSTALS COLLECTOR
+        </div> 
     </header>
     <div class = "conatiner">
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-8" id="howto">
                 <p> You will be given a random number at the start of the game. 
                     <br>
                     There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total socre.
@@ -33,42 +36,37 @@
         <div class="row">
             <div class="col-md-2"></div>
 
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div id="targetNumber"></div>
             </div>
 
-            <div class="col-md-4">
-                <div>
-                    <span id="message"></span>
+            <div class="col-md-3">
+                <div class="score">
+                    <span id="message">CAN YOU GUESS?</span>
                 </div>
-                <div>Wins :
+                <div class="score">Wins :
                     <span id="wins"></span>
                 </div>
-                <div>Loses :
+                <div class="score">Loses :
                     <span id="losses"></span>
                 </div>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <div class="sum">
+                        YOUR TOTAL SCORE IS :
+                </div>
+                <div class="sum" id = "yourNumber">
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="crystals"></div>
             </div>
-            <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div>
-                        YOUR TOTAL SCORE IS :
-                </div>
-                <div id = "yourNumber">
-            
-                </div>
+            <div class="col-md-2">
+                
             </div>
-            <div class="col-md-2"></div>
-            
         </div>
     </div>
     
